@@ -11,7 +11,7 @@ The Clinical Documentation System is an offline-first nursing documentation assi
 The backend and frontend must be run separately.
 
 Backend → FastAPI (Python)
-the back end in the app folder move out to run properly
+the back end is in the app folder move out to run properly
 
 Frontend → Next.js / React app
 
