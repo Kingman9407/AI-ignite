@@ -38,7 +38,8 @@ python -m venv venv
 source venv/binactivate      # macOS / Linux
 # venv\Scripts\activate      # Windows
 
-2. Install Python Dependencies
+
+ 2. Install Python Dependencies
 
 pip install fastapi uvicorn transformers torch faiss-cpu numpy
 
