@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 Clinical Documentation System  
+Offline NLP-Based Nurse Documentation Assistant
 
-## Getting Started
+The Clinical Documentation System is an offline-first nursing documentation assistant that accepts natural language input, extracts structured clinical information, maintains a chronological patient timeline, and generates clean nursing-style notes. The system is strictly limited to documentation tasks and does not provide diagnosis or treatment recommendations.
 
-First, run the development server:
+---
+
+## 📋 Prerequisites
+📂 Project Structure (Important)
+
+The backend and frontend must be run separately.
+
+Backend → FastAPI (Python)
+the back end in the app folder move out to run properly
+
+Frontend → Next.js / React app
+
+⚠️ Do not run backend and frontend in the same terminal.
+Each must run in its own terminal window.
+
+### Backend
+- Python 3.8 or higher
+- pip
+- Internet connection (required only for initial model download)
+
+### Frontend
+- Node.js 18 or higher
+- npm / yarn / pnpm / bun
+
+---
+
+## 🚀 Backend Setup (FastAPI)
+
+### 1. Create and Activate Virtual Environment (Recommended)
 
 ```bash
+python -m venv venv
+source venv/binactivate      # macOS / Linux
+# venv\Scripts\activate      # Windows
+
+2. Install Python Dependencies
+
+pip install fastapi uvicorn transformers torch faiss-cpu numpy
+
+3. Download AI Models (Run Once)
+
+python download.py
+
+5. Start the Backend Server
+
+python api_server.py
+
+4. Start the Frontend Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Running Summary
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Terminal 1 → Backend (FastAPI)
 
-## Learn More
+Terminal 2 → Frontend (Next.js)
 
-To learn more about Next.js, take a look at the following resources:
+Backend must be running before using the frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+System works fully offline after initial model download
