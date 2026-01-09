@@ -11,6 +11,7 @@ The system is strictly limited to documentation tasks and does not provide diagn
 Backend and frontend must be run separately.
 
 Backend → FastAPI (Python)  
+NOTE THE BACKEND IS IN THE APP FOLDER HERE FOR SINGLE DEPLOY MOVE  OUTSIDE TO WORK PROPERLY
 Frontend → Next.js / React
 
 Do not run backend and frontend in the same terminal.  
