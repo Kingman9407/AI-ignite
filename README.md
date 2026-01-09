@@ -1,67 +1,80 @@
-# 🏥 Clinical Documentation System  
+# Clinical Documentation System  
 Offline NLP-Based Nurse Documentation Assistant
 
-The Clinical Documentation System is an offline-first nursing documentation assistant that accepts natural language input, extracts structured clinical information, maintains a chronological patient timeline, and generates clean nursing-style notes. The system is strictly limited to documentation tasks and does not provide diagnosis or treatment recommendations.
+The Clinical Documentation System is an offline-first nursing documentation assistant that accepts natural language input, extracts structured clinical information, maintains a chronological patient timeline, and generates clean nursing-style notes.  
+The system is strictly limited to documentation tasks and does not provide diagnosis or treatment recommendations.
 
 ---
 
-## 📋 Prerequisites
-📂 Project Structure (Important)
+## Project Structure (Important)
 
-The backend and frontend must be run separately.
+Backend and frontend must be run separately.
 
-Backend → FastAPI (Python)
-the back end is in the app folder move out to run properly
+Backend → FastAPI (Python)  
+Frontend → Next.js / React
 
-Frontend → Next.js / React app
-
-⚠️ Do not run backend and frontend in the same terminal.
+Do not run backend and frontend in the same terminal.  
 Each must run in its own terminal window.
 
+---
+
+## Requirements
+
 ### Backend
-- Python 3.8 or higher
+- Python 3.8+
 - pip
-- Internet connection (required only for initial model download)
+- Internet connection required only for first-time model download
 
 ### Frontend
-- Node.js 18 or higher
+- Node.js 18+
 - npm / yarn / pnpm / bun
 
 ---
 
-## 🚀 Backend Setup (FastAPI)
+## Backend Setup (FastAPI)
 
-### 1. Create and Activate Virtual Environment (Recommended)
+### 1. Create and activate virtual environment
 
 ```bash
 python -m venv venv
-source venv/binactivate      # macOS / Linux
+source venv/bin/activate      # macOS / Linux
 # venv\Scripts\activate      # Windows
+```
 
+### 2. Install Python dependencies
 
- 2. Install Python Dependencies
-
+```bash
 pip install fastapi uvicorn transformers torch faiss-cpu numpy
+```
 
-3. Download AI Models (Run Once)
+### 3. Download models (run once)
 
+```bash
 python download.py
+```
 
-5. Start the Backend Server
+### 4. Start backend server
 
+```bash
 python api_server.py
+```
 
-4. Start the Frontend Server
+---
 
+## Frontend Setup
+
+### Start Next.js dev server
+
+```bash
 npm run dev
+```
 
+---
 
-Running Summary
+## Running Summary
 
-Terminal 1 → Backend (FastAPI)
-
+Terminal 1 → Backend (FastAPI)  
 Terminal 2 → Frontend (Next.js)
 
-Backend must be running before using the frontend
-
-System works fully offline after initial model download
+Backend must be running first.  
+System works offline after first model download.
